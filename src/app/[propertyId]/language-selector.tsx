@@ -17,7 +17,8 @@ export function LanguageSelector({
   }
 
   const handleLanguageSelect = (lang: 'en' | 'ar') => {
-    window.location.href = `/${params.propertyId}/${lang}`;
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    window.location.href = `${basePath}/${params.propertyId}/${lang}`;
   };
 
   return (
