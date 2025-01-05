@@ -5,12 +5,6 @@ import { use } from "react";
 import { Button } from "@/components/ui/button";
 import properties from "@/data/properties.json";
 
-export function generateStaticParams() {
-  return properties.properties.map((property) => ({
-    propertyId: property.id,
-  }));
-}
-
 export default function PropertyLanguageSelect({
   params,
 }: {

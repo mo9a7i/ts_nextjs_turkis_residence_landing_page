@@ -8,19 +8,6 @@ import { Button } from "@/components/ui/button";
 import { MapPin, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
-export function generateStaticParams() {
-  return properties.properties.flatMap((property) => [
-    {
-      propertyId: property.id,
-      lang: "en",
-    },
-    {
-      propertyId: property.id,
-      lang: "ar",
-    },
-  ]);
-}
-
 export default function PropertyDetails({
   params,
 }: {
