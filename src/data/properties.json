@@ -21,7 +21,7 @@
         },
         "images": [
           {
-            "url": "/images/khobar-luxury-suite-1.jpg",
+            "url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
             "width": 1200,
             "height": 630,
             "alt": {
@@ -262,7 +262,7 @@
         },
         "images": [
           {
-            "url": "/images/ulaya-modern-suite-1.jpg",
+            "url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
             "width": 1200,
             "height": 630,
             "alt": {
@@ -461,7 +461,7 @@
         },
         "images": [
           {
-            "url": "/images/rakah-penthouse-1.jpg",
+            "url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
             "width": 1200,
             "height": 630,
             "alt": {
