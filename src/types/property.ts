@@ -35,6 +35,23 @@ interface Advertisement {
   link: string;
 }
 
+interface NearbyAttraction {
+  image: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  distance: {
+    en: string;
+    ar: string;
+  };
+  link: string;
+}
+
 export interface Property {
   id: string;
   name: {
@@ -51,4 +68,5 @@ export interface Property {
   houseRules: HouseRule[];
   supportContact: string;
   images: string[];
+  nearbyAttractions: NearbyAttraction[];
 } 

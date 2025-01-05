@@ -1,6 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true,
   },
-};
+  basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
+}
 
 export default nextConfig;

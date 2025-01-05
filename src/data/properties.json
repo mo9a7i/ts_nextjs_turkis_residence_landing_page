@@ -84,6 +84,56 @@
       "images": [
         "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
         "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"
+      ],
+      "nearbyAttractions": [
+        {
+          "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1074",
+          "title": {
+            "en": "Panda Supermarket",
+            "ar": "بنده هايبر ماركت"
+          },
+          "description": {
+            "en": "Your nearest supermarket for all daily needs",
+            "ar": "أقرب سوبر ماركت لجميع احتياجاتك اليومية"
+          },
+          "distance": {
+            "en": "5 minutes walk",
+            "ar": "٥ دقائق مشياً"
+          },
+          "link": "https://maps.app.goo.gl/panda"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=1074",
+          "title": {
+            "en": "Dhahran Mall",
+            "ar": "الظهران مول"
+          },
+          "description": {
+            "en": "Shopping, dining, and entertainment center",
+            "ar": "مركز للتسوق والمطاعم والترفيه"
+          },
+          "distance": {
+            "en": "10 minutes drive",
+            "ar": "١٠ دقائق بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/dhahranmall"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1533481405265-e9ce0c044abb?q=80&w=1074",
+          "title": {
+            "en": "Al Rashid Mall",
+            "ar": "الراشد مول"
+          },
+          "description": {
+            "en": "Modern shopping complex with various brands",
+            "ar": "مجمع تسوق عصري يضم العديد من العلامات التجارية"
+          },
+          "distance": {
+            "en": "15 minutes drive",
+            "ar": "١٥ دقيقة بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/alrashid"
+        }
       ]
     },
     {
@@ -170,6 +220,56 @@
       "images": [
         "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
         "https://images.unsplash.com/photo-1554995207-c18c203602cb"
+      ],
+      "nearbyAttractions": [
+        {
+          "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1074",
+          "title": {
+            "en": "Panda Supermarket",
+            "ar": "بنده هايبر ماركت"
+          },
+          "description": {
+            "en": "Your nearest supermarket for all daily needs",
+            "ar": "أقرب سوبر ماركت لجميع احتياجاتك اليومية"
+          },
+          "distance": {
+            "en": "5 minutes walk",
+            "ar": "٥ دقائق مشياً"
+          },
+          "link": "https://maps.app.goo.gl/panda"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=1074",
+          "title": {
+            "en": "Dhahran Mall",
+            "ar": "الظهران مول"
+          },
+          "description": {
+            "en": "Shopping, dining, and entertainment center",
+            "ar": "مركز للتسوق والمطاعم والترفيه"
+          },
+          "distance": {
+            "en": "10 minutes drive",
+            "ar": "١٠ دقائق بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/dhahranmall"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1533481405265-e9ce0c044abb?q=80&w=1074",
+          "title": {
+            "en": "Al Rashid Mall",
+            "ar": "الراشد مول"
+          },
+          "description": {
+            "en": "Modern shopping complex with various brands",
+            "ar": "مجمع تسوق عصري يضم العديد من العلامات التجارية"
+          },
+          "distance": {
+            "en": "15 minutes drive",
+            "ar": "١٥ دقيقة بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/alrashid"
+        }
       ]
     },
     {
@@ -256,6 +356,56 @@
       "images": [
         "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
         "https://images.unsplash.com/photo-1600210492493-0946911123ea"
+      ],
+      "nearbyAttractions": [
+        {
+          "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1074",
+          "title": {
+            "en": "Panda Supermarket",
+            "ar": "بنده هايبر ماركت"
+          },
+          "description": {
+            "en": "Your nearest supermarket for all daily needs",
+            "ar": "أقرب سوبر ماركت لجميع احتياجاتك اليومية"
+          },
+          "distance": {
+            "en": "5 minutes walk",
+            "ar": "٥ دقائق مشياً"
+          },
+          "link": "https://maps.app.goo.gl/panda"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=1074",
+          "title": {
+            "en": "Dhahran Mall",
+            "ar": "الظهران مول"
+          },
+          "description": {
+            "en": "Shopping, dining, and entertainment center",
+            "ar": "مركز للتسوق والمطاعم والترفيه"
+          },
+          "distance": {
+            "en": "10 minutes drive",
+            "ar": "١٠ دقائق بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/dhahranmall"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1533481405265-e9ce0c044abb?q=80&w=1074",
+          "title": {
+            "en": "Al Rashid Mall",
+            "ar": "الراشد مول"
+          },
+          "description": {
+            "en": "Modern shopping complex with various brands",
+            "ar": "مجمع تسوق عصري يضم العديد من العلامات التجارية"
+          },
+          "distance": {
+            "en": "15 minutes drive",
+            "ar": "١٥ دقيقة بالسيارة"
+          },
+          "link": "https://maps.app.goo.gl/alrashid"
+        }
       ]
     }
   ]
