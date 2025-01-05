@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Property Welcome Page Generator
 
-## Getting Started
+A Next.js application that generates static welcome pages for properties, supporting multiple languages and featuring amenity information, location details, and WiFi access.
 
-First, run the development server:
+## Features
 
+- 🌐 Multilingual support (English & Arabic)
+- 📍 Interactive location maps with directions
+- 📱 QR code WiFi connection
+- 🏠 Property details and house rules
+- 🎯 Nearby attractions
+- 💬 WhatsApp support integration
+- 🌙 Dark mode support
+
+## Setup
+
+1. Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repository-url]
+cd [repository-name]
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Configure environment variables:
+```bash
+# .env.local
+NEXT_PUBLIC_BASE_PATH=/your-repo-name  # For GitHub Pages deployment
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding/Editing Properties
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Properties are configured in `src/data/properties.json`. Each property follows this structure:
 
-## Learn More
+```json
+{
+  "id": "unique-property-id",
+  "name": {
+    "en": "Property Name in English",
+    "ar": "Property Name in Arabic"
+  },
+  "welcomeMessage": {
+    "en": "Welcome message in English",
+    "ar": "Welcome message in Arabic"
+  },
+  "location": {
+    "address": "Physical address",
+    "googleMapsUrl": "Google Maps URL",
+    "coordinates": {
+      "lat": 26.2874,
+      "lng": 50.2240
+    },
+    "directions": {
+      "en": "Directions in English",
+      "ar": "Directions in Arabic"
+    }
+  },
+  "wifi": {
+    "ssid": "WiFi network name",
+    "password": "WiFi password"
+  },
+  "nearbyAttractions": [
+    {
+      "image": "Attraction image URL",
+      "title": {
+        "en": "Attraction name in English",
+        "ar": "Attraction name in Arabic"
+      },
+      "description": {
+        "en": "Description in English",
+        "ar": "Description in Arabic"
+      },
+      "distance": {
+        "en": "5 minutes walk",
+        "ar": "٥ دقائق مشياً"
+      },
+      "link": "Google Maps link to attraction"
+    }
+  ],
+  "advertisement": {
+    "image": "Advertisement image URL",
+    "title": {
+      "en": "Advertisement title in English",
+      "ar": "Advertisement title in Arabic"
+    },
+    "description": {
+      "en": "Description in English",
+      "ar": "Description in Arabic"
+    },
+    "link": "Advertisement link"
+  },
+  "houseRules": [
+    {
+      "icon": "🚭",
+      "title": "Rule title",
+      "description": "Rule description"
+    }
+  ],
+  "supportContact": "WhatsApp number with country code"
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Run development server
+pnpm dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Build for production
+pnpm build
 
-## Deploy on Vercel
+# Preview production build
+pnpm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is configured for GitHub Pages deployment using GitHub Actions. The workflow automatically builds and deploys when pushing to the main branch.
+
+### Custom Domain Setup
+
+1. Update `NEXT_PUBLIC_BASE_PATH` in your environment variables
+2. Configure GitHub Pages settings in your repository
+3. (Optional) Add a custom domain in GitHub repository settings
+
+## Customization
+
+### Styling
+- Tailwind CSS classes in component files
+- Theme colors in `tailwind.config.ts`
+- Dark mode toggle included
+
+### Adding Languages
+1. Add new language code to `generateStaticParams` in dynamic route pages
+2. Add translations to `properties.json`
+3. Update language selection UI
+
+## License
+
+MIT License - feel free to use and modify as needed.

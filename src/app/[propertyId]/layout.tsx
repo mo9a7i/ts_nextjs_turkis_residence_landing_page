@@ -15,7 +15,7 @@ export default function PropertyLayout({
           <ModeToggle />
         </div>
       </header>
-      <main className="container mx-auto px-4 pt-20 pb-8 md:pt-24">
+      <main className="container mx-auto px-4 pt-16 pb-8 md:pt-18">
         <Suspense fallback={
           <div className="flex items-center justify-center min-h-[60vh]">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>

@@ -3,11 +3,55 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Logo } from "@/components/ui/logo";
+import { Metadata, Viewport } from "next";
+import properties from "@/data/properties.json";
 
 const cairo = Cairo({
   subsets: ['latin', 'arabic'],
   display: 'swap',
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f0fdfa" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" }
+  ]
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://turkis-residence.com'),
+  title: {
+    default: properties.websiteName.en,
+    template: `%s | ${properties.websiteName.en}`,
+  },
+  description: "Experience luxury living in Al Khobar's finest locations. Premium furnished apartments featuring modern amenities, stunning views, and exceptional service.",
+  openGraph: {
+    type: "website",
+    locale: "en_SA",
+    alternateLocale: "ar_SA",
+    siteName: properties.websiteName.en,
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Turkis Residence - Luxury Apartments in Al Khobar"
+      }
+    ],
+    description: "Experience luxury living in Al Khobar's finest locations. Premium furnished apartments featuring modern amenities, stunning views, and exceptional service."
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: properties.websiteName.en,
+    description: "Experience luxury living in Al Khobar's finest locations. Premium furnished apartments featuring modern amenities, stunning views, and exceptional service.",
+    images: ["/images/og-image.jpg"]
+  },
+  keywords: ["Al Khobar apartments", "luxury residence", "furnished apartments", "Saudi Arabia accommodation", "premium living"],
+  authors: [{ name: "Turkis Residence" }],
+  robots: "index, follow"
+};
 
 export default function RootLayout({
   children,

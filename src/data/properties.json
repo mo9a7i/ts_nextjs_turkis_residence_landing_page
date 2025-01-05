@@ -1,14 +1,35 @@
 {
+  "websiteName": {
+    "en": "Turkis Residence",
+    "ar": "تركس ريزيدنس"
+  },
   "properties": [
     {
-      "id": "palm-jumeirah-apt",
+      "id": "tuhama-dhahran-apt",
       "name": {
-        "en": "Palm Jumeirah Luxury Suite",
-        "ar": "شقة فاخرة في نخلة جميرا"
+        "en": "Al Khobar Luxury Suite",
+        "ar": "شقة فاخرة في الخبر"
       },
       "welcomeMessage": {
-        "en": "Welcome to your luxury retreat in Palm Jumeirah!",
-        "ar": "مرحباً بكم في ملاذكم الفاخر في نخلة جميرا!"
+        "en": "Welcome to your luxury retreat in Al Khobar!",
+        "ar": "مرحباً بكم في ملاذكم الفاخر في الخبر!"
+      },
+      "seo": {
+        "description": {
+          "en": "Experience luxury living in the heart of Al Khobar. Modern furnished apartment with stunning views, premium amenities, and easy access to shopping and entertainment.",
+          "ar": "استمتع بالحياة الفاخرة في قلب الخبر. شقة مفروشة حديثة مع إطلالات خلابة ومرافق متميزة وسهولة الوصول إلى مراكز التسوق والترفيه."
+        },
+        "images": [
+          {
+            "url": "/images/khobar-luxury-suite-1.jpg",
+            "width": 1200,
+            "height": 630,
+            "alt": {
+              "en": "Luxury Suite in Al Khobar - Living Room View",
+              "ar": "شقة فاخرة في الخبر - منظر غرفة المعيشة"
+            }
+          }
+        ]
       },
       "location": {
         "address": "Al Khobar Corniche, Al Khobar",
@@ -24,19 +45,27 @@
       },
       "wifi": {
         "ssid": "PalmApt_Guest",
-        "password": "welcome2024"
+        "password": "welcome2024",
+        "provider": {
+          "name": "Mobily",
+          "speed": "1Gbps"
+        },
+        "description": {
+          "en": "Enjoy 5G connection 🚀 with speeds up to 1Gbps from Mobily",
+          "ar": "استمتع باتصال 5G 🚀 بسرعات تصل إلى 1Gbps من موبايلي"
+        }
       },
       "advertisement": {
         "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
         "title": {
-          "en": "Visit The Dubai Mall",
-          "ar": "زوروا دبي مول"
+          "en": "Visit Dhahran Mall",
+          "ar": "زوروا الظهران مول"
         },
         "description": {
-          "en": "Just 15 minutes away - the world's largest shopping mall!",
-          "ar": "على بعد 15 دقيقة فقط - أكبر مركز تسوق في العالم!"
+          "en": "Just 15 minutes away - premier shopping destination!",
+          "ar": "على بعد 15 دقيقة فقط - وجهة التسوق الأولى!"
         },
-        "link": "https://thedubaimall.com"
+        "link": "https://maps.app.goo.gl/dhahranmall"
       },
       "houseRules": [
         {
@@ -83,7 +112,13 @@
       "supportContact": "+971501234567",
       "images": [
         "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
-        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
+        "https://images.unsplash.com/photo-1515263487990-61b07816b324",
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858"
       ],
       "nearbyAttractions": [
         {
@@ -134,17 +169,108 @@
           },
           "link": "https://maps.app.goo.gl/alrashid"
         }
+      ],
+      "amenities": [
+        {
+          "id": "waterfront",
+          "icon": "waves",
+          "title": {
+            "en": "Waterfront",
+            "ar": "واجهة بحرية"
+          },
+          "description": {
+            "en": "Beautiful sea views",
+            "ar": "إطلالات بحرية جميلة"
+          }
+        },
+        {
+          "id": "kitchen",
+          "icon": "kitchen",
+          "title": {
+            "en": "Full Kitchen",
+            "ar": "مطبخ متكامل"
+          }
+        },
+        {
+          "id": "workspace",
+          "icon": "workspace",
+          "title": {
+            "en": "Dedicated Workspace",
+            "ar": "مساحة عمل مخصصة"
+          }
+        },
+        {
+          "id": "pool",
+          "icon": "pool",
+          "title": {
+            "en": "Swimming Pool",
+            "ar": "حمام سباحة"
+          }
+        },
+        {
+          "id": "elevator",
+          "icon": "elevator",
+          "title": {
+            "en": "Elevator",
+            "ar": "مصعد"
+          }
+        },
+        {
+          "id": "parking",
+          "icon": "parking",
+          "title": {
+            "en": "Free Parking",
+            "ar": "موقف مجاني"
+          }
+        },
+        {
+          "id": "wifi",
+          "icon": "wifi",
+          "title": {
+            "en": "High-speed WiFi",
+            "ar": "واي فاي عالي السرعة"
+          }
+        },
+        {
+          "id": "bathroom",
+          "icon": "bathroom",
+          "title": {
+            "en": "Modern Bathroom",
+            "ar": "حمام عصري"
+          },
+          "description": {
+            "en": "With bidet and hot water",
+            "ar": "مع شطاف ومياه ساخنة"
+          }
+        }
       ]
     },
     {
-      "id": "downtown-dubai-loft",
+      "id": "downtown-khobar-loft",
       "name": {
-        "en": "Downtown Dubai Modern Loft",
-        "ar": "شقة حديثة في وسط مدينة دبي"
+        "en": "Al Ulaya Modern Suite",
+        "ar": "شقة حديثة في العليا"
       },
       "welcomeMessage": {
-        "en": "Welcome to your stylish retreat in the heart of Downtown Dubai!",
-        "ar": "مرحباً بكم في ملاذكم الأنيق في قلب دبي!"
+        "en": "Welcome to your stylish retreat in the heart of Al Ulaya!",
+        "ar": "مرحباً بكم في ملاذكم الأنيق في قلب العليا!"
+      },
+      "seo": {
+        "description": {
+          "en": "Modern living in Al Ulaya district. Stylish furnished apartment with contemporary design, premium amenities, and convenient location.",
+          "ar": "الحياة العصرية في حي العليا. شقة مفروشة أنيقة بتصميم معاصر ومرافق متميزة وموقع مناسب."
+        },
+        "images": [
+          {
+            "url": "/images/ulaya-modern-suite-1.jpg",
+            "width": 1200,
+            "height": 630,
+            "alt": {
+              "en": "Modern Suite in Al Ulaya - Living Space",
+              "ar": "شقة عصرية في العليا - مساحة المعيشة"
+            }
+          }
+        ]
       },
       "location": {
         "address": "Al Ulaya, Al Khobar",
@@ -160,19 +286,27 @@
       },
       "wifi": {
         "ssid": "Downtown_Loft",
-        "password": "connect2024"
+        "password": "connect2024",
+        "provider": {
+          "name": "Mobily",
+          "speed": "1Gbps"
+        },
+        "description": {
+          "en": "Enjoy 5G connection 🚀 with speeds up to 1Gbps from Mobily",
+          "ar": "استمتع باتصال 5G 🚀 بسرعات تصل إلى 1Gbps من موبايلي"
+        }
       },
       "advertisement": {
         "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
         "title": {
-          "en": "Experience Burj Khalifa",
-          "ar": "جرب برج خليفة"
+          "en": "Visit Al Rashid Mall",
+          "ar": "زوروا الراشد مول"
         },
         "description": {
-          "en": "World's tallest building - just 5 minutes walk!",
-          "ar": "أطول مبنى في العالم - على بعد 5 دقائق سيراً على الأقدام!"
+          "en": "Premier shopping destination - just 5 minutes away!",
+          "ar": "وجهة التسوق الأولى - على بعد 5 دقائق فقط!"
         },
-        "link": "https://burjkhalifa.ae"
+        "link": "https://maps.app.goo.gl/alrashid"
       },
       "houseRules": [
         {
@@ -219,7 +353,11 @@
       "supportContact": "+971502345678",
       "images": [
         "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
-        "https://images.unsplash.com/photo-1554995207-c18c203602cb"
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
+        "https://images.unsplash.com/photo-1515263487990-61b07816b324",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd"
       ],
       "nearbyAttractions": [
         {
@@ -270,17 +408,68 @@
           },
           "link": "https://maps.app.goo.gl/alrashid"
         }
+      ],
+      "amenities": [
+        {
+          "id": "wifi",
+          "icon": "wifi",
+          "title": {
+            "en": "High-speed WiFi",
+            "ar": "واي فاي عالي السرعة"
+          }
+        },
+        {
+          "id": "tv",
+          "icon": "tv",
+          "title": {
+            "en": "Smart TV",
+            "ar": "تلفاز ذكي"
+          }
+        },
+        {
+          "id": "kitchen",
+          "icon": "kitchen",
+          "title": {
+            "en": "Fully Equipped Kitchen",
+            "ar": "مطبخ مجهز بالكامل"
+          }
+        },
+        {
+          "id": "workspace",
+          "icon": "workspace",
+          "title": {
+            "en": "Dedicated Workspace",
+            "ar": "مساحة عمل مخصصة"
+          }
+        }
       ]
     },
     {
       "id": "marina-penthouse",
       "name": {
-        "en": "Dubai Marina Penthouse",
-        "ar": "بنتهاوس في مرسى دبي"
+        "en": "Al Rakah Luxury Penthouse",
+        "ar": "بنتهاوس فاخر في الراكة"
       },
       "welcomeMessage": {
-        "en": "Welcome to your luxury penthouse with stunning marina views!",
-        "ar": "مرحباً بكم في البنتهاوس الفاخر مع إطلالات خلابة على المرسى!"
+        "en": "Welcome to your luxury penthouse with stunning city views!",
+        "ar": "مرحباً بكم في البنتهاوس الفاخر مع إطلالات خلابة على المدينة!"
+      },
+      "seo": {
+        "description": {
+          "en": "Exclusive penthouse living in Al Rakah. Spacious luxury apartment with panoramic views, high-end finishes, and premium location.",
+          "ar": "سكن بنتهاوس حصري في الراكة. شقة فاخرة واسعة مع إطلالات بانورامية وتشطيبات راقية وموقع متميز."
+        },
+        "images": [
+          {
+            "url": "/images/rakah-penthouse-1.jpg",
+            "width": 1200,
+            "height": 630,
+            "alt": {
+              "en": "Luxury Penthouse in Al Rakah - Panoramic View",
+              "ar": "بنتهاوس فاخر في الراكة - إطلالة بانورامية"
+            }
+          }
+        ]
       },
       "location": {
         "address": "Al Rakah, Al Khobar",
@@ -296,19 +485,27 @@
       },
       "wifi": {
         "ssid": "Marina_Penthouse",
-        "password": "marina2024"
+        "password": "marina2024",
+        "provider": {
+          "name": "Mobily",
+          "speed": "1Gbps"
+        },
+        "description": {
+          "en": "Enjoy 5G connection 🚀 with speeds up to 1Gbps from Mobily",
+          "ar": "استمتع باتصال 5G 🚀 بسرعات تصل إلى 1Gbps من موبايلي"
+        }
       },
       "advertisement": {
         "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
         "title": {
-          "en": "Dubai Marina Walk",
-          "ar": "ممشى مرسى دبي"
+          "en": "Al Khobar Corniche",
+          "ar": "كورنيش الخبر"
         },
         "description": {
-          "en": "Explore the vibrant Marina Walk right outside!",
-          "ar": "اكتشف ممشى المرسى النابض بالحياة مباشرة خارج المبنى!"
+          "en": "Explore the vibrant Corniche right outside!",
+          "ar": "اكتشف الكورنيش النابض بالحياة مباشرة خارج المبنى!"
         },
-        "link": "https://www.visitdubai.com/en/places-to-visit/dubai-marina"
+        "link": "https://maps.app.goo.gl/khobar-corniche"
       },
       "houseRules": [
         {
@@ -355,7 +552,13 @@
       "supportContact": "+971503456789",
       "images": [
         "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
-        "https://images.unsplash.com/photo-1600210492493-0946911123ea"
+        "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
+        "https://images.unsplash.com/photo-1515263487990-61b07816b324",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd"
       ],
       "nearbyAttractions": [
         {
@@ -405,6 +608,56 @@
             "ar": "١٥ دقيقة بالسيارة"
           },
           "link": "https://maps.app.goo.gl/alrashid"
+        }
+      ],
+      "amenities": [
+        {
+          "id": "waterfront",
+          "icon": "waterfront",
+          "title": {
+            "en": "Sea View",
+            "ar": "إطلالة على البحر"
+          },
+          "description": {
+            "en": "Stunning views of the Arabian Gulf",
+            "ar": "إطلالات خلابة على الخليج العربي"
+          }
+        },
+        {
+          "id": "elevator",
+          "icon": "elevator",
+          "title": {
+            "en": "Private Elevator",
+            "ar": "مصعد خاص"
+          }
+        },
+        {
+          "id": "parking",
+          "icon": "parking",
+          "title": {
+            "en": "Reserved Parking",
+            "ar": "موقف سيارات محجوز"
+          }
+        },
+        {
+          "id": "bathroom",
+          "icon": "bathroom",
+          "title": {
+            "en": "Luxury Bathroom",
+            "ar": "حمام فاخر"
+          },
+          "description": {
+            "en": "With bidet and rain shower",
+            "ar": "مع شطاف ودش المطر"
+          }
+        },
+        {
+          "id": "microwave",
+          "icon": "microwave",
+          "title": {
+            "en": "Modern Kitchen Appliances",
+            "ar": "أجهزة مطبخ حديثة"
+          }
         }
       ]
     }

@@ -1,4 +1,4 @@
-interface Location {
+export interface Location {
   address: string;
   googleMapsUrl: string;
   coordinates: {
@@ -11,31 +11,20 @@ interface Location {
   };
 }
 
-interface WiFiDetails {
+export interface WiFiDetails {
   ssid: string;
   password: string;
-}
-
-interface HouseRule {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Advertisement {
-  image: string;
-  title: {
-    en: string;
-    ar: string;
+  provider: {
+    name: string;
+    speed: string;
   };
   description: {
     en: string;
     ar: string;
   };
-  link: string;
 }
 
-interface NearbyAttraction {
+export interface NearbyAttraction {
   image: string;
   title: {
     en: string;
@@ -52,12 +41,61 @@ interface NearbyAttraction {
   link: string;
 }
 
+export interface Advertisement {
+  image: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  link: string;
+}
+
+export interface HouseRule {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface SEO {
+  description: {
+    en: string;
+    ar: string;
+  };
+  images: {
+    url: string;
+    width: number;
+    height: number;
+    alt: {
+      en: string;
+      ar: string;
+    };
+  }[];
+}
+
+export interface Amenity {
+  id: string;
+  icon: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description?: {
+    en: string;
+    ar: string;
+  };
+}
+
 export interface Property {
   id: string;
   name: {
     en: string;
     ar: string;
   };
+  seo: SEO;
   welcomeMessage: {
     en: string;
     ar: string;
@@ -69,4 +107,5 @@ export interface Property {
   supportContact: string;
   images: string[];
   nearbyAttractions: NearbyAttraction[];
+  amenities: Amenity[];
 } 
