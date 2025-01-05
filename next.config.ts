@@ -11,7 +11,7 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/ts_nextjs_turkis_residence_landing_page' : '',
 }
 
 export default nextConfig;
