@@ -1,0 +1,262 @@
+{
+  "properties": [
+    {
+      "id": "palm-jumeirah-apt",
+      "name": {
+        "en": "Palm Jumeirah Luxury Suite",
+        "ar": "شقة فاخرة في نخلة جميرا"
+      },
+      "welcomeMessage": {
+        "en": "Welcome to your luxury retreat in Palm Jumeirah!",
+        "ar": "مرحباً بكم في ملاذكم الفاخر في نخلة جميرا!"
+      },
+      "location": {
+        "address": "Al Khobar Corniche, Al Khobar",
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=26.2874,50.2240",
+        "coordinates": {
+          "lat": 26.2874,
+          "lng": 50.2240
+        },
+        "directions": {
+          "en": "The building is located at the corner of the street with a glass door entrance. Underground parking is available. The studio is on the 1st floor, first door to the left of the elevator (no apartment number).\n\nIf you need anything, contact me through the app and I will respond quickly, God willing. 🙏",
+          "ar": "العمارة في زاوية الشارع والمدخل حقها بابه قزاز وفيه مواقف تحت الارض، الاستديو موجود في الدور رقم (1) ورح يكون اول باب يسار المصعد (ما فيه رقم شقه)\n\nاذا احتجت اي شي تواصل معي بالبرنامج ورح ارد عليك سريع بإذن الله. 🙏"
+        }
+      },
+      "wifi": {
+        "ssid": "PalmApt_Guest",
+        "password": "welcome2024"
+      },
+      "advertisement": {
+        "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+        "title": {
+          "en": "Visit The Dubai Mall",
+          "ar": "زوروا دبي مول"
+        },
+        "description": {
+          "en": "Just 15 minutes away - the world's largest shopping mall!",
+          "ar": "على بعد 15 دقيقة فقط - أكبر مركز تسوق في العالم!"
+        },
+        "link": "https://thedubaimall.com"
+      },
+      "houseRules": [
+        {
+          "icon": "🚭",
+          "title": "No Smoking",
+          "description": "Smoking is strictly prohibited inside the property"
+        },
+        {
+          "icon": "🔇",
+          "title": "Quiet Hours",
+          "description": "Please maintain quiet between 10 PM and 7 AM"
+        },
+        {
+          "icon": "👥",
+          "title": "Max Guests",
+          "description": "Maximum 4 guests allowed in the property"
+        },
+        {
+          "icon": "🐾",
+          "title": "No Pets",
+          "description": "Pets are not allowed in this property"
+        },
+        {
+          "icon": "🎉",
+          "title": "No Parties",
+          "description": "Parties and events are not permitted"
+        },
+        {
+          "icon": "🧹",
+          "title": "Keep it Clean",
+          "description": "Please maintain the cleanliness of the property"
+        },
+        {
+          "icon": "🔑",
+          "title": "Check-out Time",
+          "description": "Please check out by 11 AM on your departure day"
+        },
+        {
+          "icon": "🌟",
+          "title": "Have Fun!",
+          "description": "Enjoy your stay and make great memories"
+        }
+      ],
+      "supportContact": "+971501234567",
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"
+      ]
+    },
+    {
+      "id": "downtown-dubai-loft",
+      "name": {
+        "en": "Downtown Dubai Modern Loft",
+        "ar": "شقة حديثة في وسط مدينة دبي"
+      },
+      "welcomeMessage": {
+        "en": "Welcome to your stylish retreat in the heart of Downtown Dubai!",
+        "ar": "مرحباً بكم في ملاذكم الأنيق في قلب دبي!"
+      },
+      "location": {
+        "address": "Al Ulaya, Al Khobar",
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=26.3067,50.2155",
+        "coordinates": {
+          "lat": 26.3067,
+          "lng": 50.2155
+        },
+        "directions": {
+          "en": "The building is located at the corner of the street with a glass door entrance. Underground parking is available. The studio is on the 1st floor, first door to the left of the elevator (no apartment number).\n\nIf you need anything, contact me through the app and I will respond quickly, God willing. 🙏",
+          "ar": "العمارة في زاوية الشارع والمدخل حقها بابه قزاز وفيه مواقف تحت الارض، الاستديو موجود في الدور رقم (1) ورح يكون اول باب يسار المصعد (ما فيه رقم شقه)\n\nاذا احتجت اي شي تواصل معي بالبرنامج ورح ارد عليك سريع بإذن الله. 🙏"
+        }
+      },
+      "wifi": {
+        "ssid": "Downtown_Loft",
+        "password": "connect2024"
+      },
+      "advertisement": {
+        "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
+        "title": {
+          "en": "Experience Burj Khalifa",
+          "ar": "جرب برج خليفة"
+        },
+        "description": {
+          "en": "World's tallest building - just 5 minutes walk!",
+          "ar": "أطول مبنى في العالم - على بعد 5 دقائق سيراً على الأقدام!"
+        },
+        "link": "https://burjkhalifa.ae"
+      },
+      "houseRules": [
+        {
+          "icon": "🚭",
+          "title": "No Smoking",
+          "description": "Smoking is strictly prohibited inside the property"
+        },
+        {
+          "icon": "🔇",
+          "title": "Quiet Hours",
+          "description": "Please maintain quiet between 10 PM and 7 AM"
+        },
+        {
+          "icon": "👥",
+          "title": "Max Guests",
+          "description": "Maximum 4 guests allowed in the property"
+        },
+        {
+          "icon": "🐾",
+          "title": "No Pets",
+          "description": "Pets are not allowed in this property"
+        },
+        {
+          "icon": "🎉",
+          "title": "No Parties",
+          "description": "Parties and events are not permitted"
+        },
+        {
+          "icon": "🧹",
+          "title": "Keep it Clean",
+          "description": "Please maintain the cleanliness of the property"
+        },
+        {
+          "icon": "🔑",
+          "title": "Check-out Time",
+          "description": "Please check out by 11 AM on your departure day"
+        },
+        {
+          "icon": "🌟",
+          "title": "Have Fun!",
+          "description": "Enjoy your stay and make great memories"
+        }
+      ],
+      "supportContact": "+971502345678",
+      "images": [
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb"
+      ]
+    },
+    {
+      "id": "marina-penthouse",
+      "name": {
+        "en": "Dubai Marina Penthouse",
+        "ar": "بنتهاوس في مرسى دبي"
+      },
+      "welcomeMessage": {
+        "en": "Welcome to your luxury penthouse with stunning marina views!",
+        "ar": "مرحباً بكم في البنتهاوس الفاخر مع إطلالات خلابة على المرسى!"
+      },
+      "location": {
+        "address": "Al Rakah, Al Khobar",
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=26.3235,50.2090",
+        "coordinates": {
+          "lat": 26.3235,
+          "lng": 50.2090
+        },
+        "directions": {
+          "en": "The building is located at the corner of the street with a glass door entrance. Underground parking is available. The studio is on the 1st floor, first door to the left of the elevator (no apartment number).\n\nIf you need anything, contact me through the app and I will respond quickly, God willing. 🙏",
+          "ar": "العمارة في زاوية الشارع والمدخل حقها بابه قزاز وفيه مواقف تحت الارض، الاستديو موجود في الدور رقم (1) ورح يكون اول باب يسار المصعد (ما فيه رقم شقه)\n\nاذا احتجت اي شي تواصل معي بالبرنامج ورح ارد عليك سريع بإذن الله. 🙏"
+        }
+      },
+      "wifi": {
+        "ssid": "Marina_Penthouse",
+        "password": "marina2024"
+      },
+      "advertisement": {
+        "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+        "title": {
+          "en": "Dubai Marina Walk",
+          "ar": "ممشى مرسى دبي"
+        },
+        "description": {
+          "en": "Explore the vibrant Marina Walk right outside!",
+          "ar": "اكتشف ممشى المرسى النابض بالحياة مباشرة خارج المبنى!"
+        },
+        "link": "https://www.visitdubai.com/en/places-to-visit/dubai-marina"
+      },
+      "houseRules": [
+        {
+          "icon": "🎉",
+          "title": "No Smoking",
+          "description": "Smoking is strictly prohibited inside the property"
+        },
+        {
+          "icon": "🔇",
+          "title": "Quiet Hours",
+          "description": "Please maintain quiet between 10 PM and 7 AM"
+        },
+        {
+          "icon": "👥",
+          "title": "Max Guests",
+          "description": "Maximum 4 guests allowed in the property"
+        },
+        {
+          "icon": "🐾",
+          "title": "No Pets",
+          "description": "Pets are not allowed in this property"
+        },
+        {
+          "icon": "🎉",
+          "title": "No Parties",
+          "description": "Parties and events are not permitted"
+        },
+        {
+          "icon": "🧹",
+          "title": "Keep it Clean",
+          "description": "Please maintain the cleanliness of the property"
+        },
+        {
+          "icon": "🔑",
+          "title": "Check-out Time",
+          "description": "Please check out by 11 AM on your departure day"
+        },
+        {
+          "icon": "🌟",
+          "title": "Have Fun!",
+          "description": "Enjoy your stay and make great memories"
+        }
+      ],
+      "supportContact": "+971503456789",
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
+        "https://images.unsplash.com/photo-1600210492493-0946911123ea"
+      ]
+    }
+  ]
+} 
