@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: process.env.NEXT_PUBLIC_EXPORT === 'true' ? 'export' : undefined,
+  transpilePackages: ['@radix-ui/react-dropdown-menu'],
   images: {
     remotePatterns: [
       {
