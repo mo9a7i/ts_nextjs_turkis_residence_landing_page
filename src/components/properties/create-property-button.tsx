@@ -2,15 +2,18 @@
 
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export function CreatePropertyButton() {
+  const router = useRouter()
+
   return (
-    <Button asChild>
-      <Link href="/dashboard/properties/create">
-        <Plus className="h-4 w-4 mr-2" />
-        Add Property
-      </Link>
+    <Button 
+      onClick={() => router.push("/dashboard/properties/create")}
+      className="flex items-center gap-2"
+    >
+      <Plus className="h-4 w-4" />
+      Add Property
     </Button>
   )
 } 

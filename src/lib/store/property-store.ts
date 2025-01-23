@@ -5,22 +5,22 @@ import { ID } from 'appwrite';
 interface PropertyFormData {
   name: string;
   slug: string;
-  images: string[];
-  location: {
+  location: string | {
     address: string;
     city: string;
   };
-  seo: {
+  seo: string | {
     title: string;
     description: string;
   };
-  amenities: string[];
+  amenities: string | string[];
+  images: string | string[];
 }
 
 interface PropertyStore {
   isLoading: boolean;
   error: string | null;
-  createProperty: (data: PropertyFormData, userId: string) => Promise<void>;
+  createProperty: (data: PropertyFormData, userId: string) => Promise<any>;
   updateProperty: (id: string, data: Partial<PropertyFormData>) => Promise<void>;
   deleteProperty: (id: string) => Promise<void>;
 }
@@ -36,31 +36,24 @@ export const usePropertyStore = create<PropertyStore>((set) => ({
     try {
       set({ isLoading: true, error: null });
       
-      // Generate a URL-friendly slug
-      const slug = data.slug.toLowerCase().replace(/[^a-z0-9]+/g, '-')
-      
-      await databases.createDocument(
+      const result = await databases.createDocument(
         process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!,
-        PROPERTIES_COLLECTION,
+        'properties',
         ID.unique(),
         {
           userId,
           name: data.name,
-          slug,
-          location: {
-            address: data.location.address,
-            city: data.location.city,
-          },
-          seo: {
-            title: data.seo.title,
-            description: data.seo.description,
-          },
+          slug: data.slug,
+          location: data.location,
+          seo: data.seo,
           amenities: data.amenities,
           images: data.images,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
         }
       );
+
+      return result;
     } catch (error: any) {
       set({ error: error.message });
       throw error;

@@ -56,10 +56,17 @@ export const useAuthStore = create<AuthState>((set) => ({
   checkAuth: async () => {
     try {
       set({ isLoading: true, error: null });
-      const user = await account.get();
-      set({ user, isLoading: false });
-    } catch {
+      const session = await account.getSession('current');
+      if (session) {
+        const user = await account.get();
+        set({ user, isLoading: false });
+      } else {
+        set({ user: null, isLoading: false });
+        throw new Error('No session found');
+      }
+    } catch (error) {
       set({ user: null, isLoading: false });
+      throw error;
     }
   },
 })); 

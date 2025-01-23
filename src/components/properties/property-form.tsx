@@ -25,25 +25,31 @@ import { useState, useEffect } from "react"
 import { PropertyPreview } from "./property-preview"
 
 const formSchema = z.object({
-  name: z.string()
-    .min(2, "Name must be at least 2 characters")
-    .max(255, "Name must be less than 255 characters")
-    .regex(/^[\w\s-]+$/, "Name can only contain letters, numbers, spaces, and hyphens"),
+  name: z.object({
+    en: z.string().min(2),
+    ar: z.string().min(2)
+  }),
+  welcomeMessage: z.object({
+    en: z.string().min(2),
+    ar: z.string().min(2)
+  }),
+  location: z.object({
+    address: z.string(),
+    googleMapsUrl: z.string().url(),
+    coordinates: z.object({
+      lat: z.number(),
+      lng: z.number()
+    }),
+    directions: z.object({
+      en: z.string(),
+      ar: z.string()
+    })
+  }),
   slug: z.string()
     .min(2, "Slug must be at least 2 characters")
     .max(255, "Slug must be less than 255 characters")
     .regex(/^[a-z0-9-]+$/, "Slug can only contain lowercase letters, numbers, and hyphens")
     .refine(s => !s.startsWith('-') && !s.endsWith('-'), "Slug cannot start or end with a hyphen"),
-  location: z.object({
-    address: z.string()
-      .min(5, "Address must be at least 5 characters")
-      .max(255, "Address must be less than 255 characters")
-      .regex(/^[\w\s,.-]+$/, "Address contains invalid characters"),
-    city: z.string()
-      .min(2, "City must be at least 2 characters")
-      .max(255, "City must be less than 255 characters")
-      .regex(/^[a-zA-Z\s-]+$/, "City can only contain letters, spaces, and hyphens"),
-  }),
   seo: z.object({
     title: z.string()
       .min(5, "Title must be at least 5 characters")
@@ -78,11 +84,26 @@ export function PropertyForm() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      name: {
+        en: "",
+        ar: ""
+      },
+      welcomeMessage: {
+        en: "",
+        ar: ""
+      },
       slug: "",
       location: {
         address: "",
-        city: "",
+        googleMapsUrl: "",
+        coordinates: {
+          lat: 0,
+          lng: 0
+        },
+        directions: {
+          en: "",
+          ar: ""
+        }
       },
       seo: {
         title: "",
@@ -94,8 +115,10 @@ export function PropertyForm() {
     mode: "onChange",
   })
 
+  console.log("Form mounted")
+
   useEffect(() => {
-    const name = form.watch("name")
+    const name = form.watch("name.en")
     if (name) {
       const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
       form.setValue("slug", slug, { shouldValidate: true })
@@ -110,20 +133,41 @@ export function PropertyForm() {
         form.setValue("seo.description", `Discover ${name} - a beautiful property located in the heart of the city.`, { shouldValidate: true })
       }
     }
-  }, [form.watch("name")])
+  }, [form.watch("name.en")])
 
   async function onSubmit(data: FormData) {
+    console.log("Form submitted", data)
+    if (!user) {
+      console.log("No user found")
+      toast({
+        title: "Error",
+        description: "You must be logged in to create a property",
+        variant: "destructive",
+      })
+      return
+    }
+
     try {
-      await createProperty(data, user!.$id)
+      // Stringify objects before saving
+      const formattedData = {
+        ...data,
+        location: JSON.stringify(data.location),
+        seo: JSON.stringify(data.seo),
+        amenities: JSON.stringify(data.amenities),
+        images: JSON.stringify(data.images)
+      }
+
+      await createProperty(formattedData, user.$id)
       toast({
         title: "Success",
         description: "Property created successfully",
       })
       router.push("/dashboard/properties")
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Create property error:", error)
       toast({
         title: "Error",
-        description: "Something went wrong",
+        description: error.message || "Failed to create property",
         variant: "destructive",
       })
     }
@@ -152,10 +196,23 @@ export function PropertyForm() {
               <h2 className="text-lg font-semibold">Basic Information</h2>
               <FormField
                 control={form.control}
-                name="name"
+                name="name.en"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Name (English)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Property name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="name.ar"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name (Arabic)</FormLabel>
                     <FormControl>
                       <Input placeholder="Property name" {...field} />
                     </FormControl>
@@ -204,12 +261,64 @@ export function PropertyForm() {
               />
               <FormField
                 control={form.control}
-                name="location.city"
+                name="location.googleMapsUrl"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel>Google Maps URL</FormLabel>
                     <FormControl>
-                      <Input placeholder="City" {...field} />
+                      <Input placeholder="Google Maps URL" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="location.coordinates.lat"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Latitude</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Latitude" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="location.coordinates.lng"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Longitude</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Longitude" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="location.directions.en"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Directions (English)</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Directions" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="location.directions.ar"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Directions (Arabic)</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Directions" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

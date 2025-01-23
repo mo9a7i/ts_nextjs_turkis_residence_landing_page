@@ -35,12 +35,12 @@ export function ImageUpload({
         file
       )
 
-      const url = storage.getFileView(
+      const fileUrl = storage.getFileView(
         process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID!,
-        result.$id
-      ).toString()
+        fileId
+      )
 
-      onChange([...value, url])
+      onChange([...value, fileUrl])
     } catch (error) {
       toast({
         title: "Error",

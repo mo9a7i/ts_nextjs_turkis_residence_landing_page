@@ -4,44 +4,105 @@ import { enums } from './enums';
 
 export const collections: Record<string, CollectionConfig> = {
     users: {
-        name: 'users',
+        name: 'Users',
         permissions: [
-            Permission.read(Role.user('{{user.$id}}')),
-            Permission.update(Role.user('{{user.$id}}')),
+            Permission.read(Role.any()),
+            Permission.update(Role.users()),
+            Permission.delete(Role.users())
         ],
         attributes: {
             name: { type: 'string', size: 255, required: true },
             email: { type: 'email', required: true },
-            planId: { type: 'string', size: 64, required: true },
-            customDomain: { type: 'string', size: 255, required: false },
+            websiteName: {
+                type: 'string',
+                size: 255,
+                required: true,
+            },
             createdAt: { type: 'datetime', required: true }
         }
     },
     properties: {
-        name: 'properties',
+        name: 'Properties',
         permissions: [
             Permission.read(Role.any()),
-            Permission.create(Role.user('{{document.userId}}')),
-            Permission.update(Role.user('{{document.userId}}')),
-            Permission.delete(Role.user('{{document.userId}}')),
+            Permission.create(Role.users()),
+            Permission.update(Role.users()),
+            Permission.delete(Role.users())
         ],
         attributes: {
-            userId: { type: 'string', size: 255, required: true },
-            name: { type: 'string', size: 255, required: true },
-            slug: { type: 'string', size: 255, required: true },
-            seo: { type: 'string', size: 65535, required: true },
-            amenities: { type: 'string', size: 65535, required: true },
-            location: { type: 'string', size: 65535, required: true },
-            images: { type: 'string', size: 255, required: true },
-            createdAt: { type: 'datetime', required: true },
-            updatedAt: { type: 'datetime', required: true }
+            userId: { type: 'string', size: 36, required: true },
+            name_en: { type: 'string', size: 1024, required: true },
+            name_ar: { type: 'string', size: 1024, required: true },
+            welcomeMessage_en: { type: 'string', size: 1024, required: true },
+            welcomeMessage_ar: { type: 'string', size: 1024, required: true },
+            seo: { type: 'string', size: 2048, required: true },
+            location: { type: 'string', size: 2048, required: true },
+            wifi: { type: 'string', size: 1024, required: true },
+            advertisement: { type: 'string', size: 2048, required: false },
+            supportContact: { type: 'string', size: 255, required: true },
+            images: { type: 'string', size: 2048, required: true },
+            nearbyAttractions: { type: 'string', size: 4096, required: false }
+        }
+    },
+    amenities: {
+        name: 'Amenities',
+        permissions: [
+            Permission.read(Role.any()),
+            Permission.create(Role.users()),
+            Permission.update(Role.users())
+        ],
+        attributes: {
+            title_en: { type: 'string', size: 255, required: true },
+            title_ar: { type: 'string', size: 255, required: true },
+            icon: { type: 'string', size: 64, required: true }, // Lucide icon name
+            isDefault: { type: 'boolean', required: true, default: false }
+        }
+    },
+    propertyAmenities: {
+        name: 'PropertyAmenities',
+        permissions: [
+            Permission.read(Role.any()),
+            Permission.create(Role.users()),
+            Permission.delete(Role.users())
+        ],
+        attributes: {
+            propertyId: { type: 'string', size: 36, required: true },
+            amenityId: { type: 'string', size: 36, required: true }
+        }
+    },
+    houseRules: {
+        name: 'HouseRules',
+        permissions: [
+            Permission.read(Role.any()),
+            Permission.create(Role.users()),
+            Permission.update(Role.users())
+        ],
+        attributes: {
+            title_en: { type: 'string', size: 255, required: true },
+            title_ar: { type: 'string', size: 255, required: true },
+            description_en: { type: 'string', size: 1024, required: true },
+            description_ar: { type: 'string', size: 1024, required: true },
+            icon: { type: 'string', size: 64, required: true },
+            isDefault: { type: 'boolean', required: true, default: false }
+        }
+    },
+    propertyHouseRules: {
+        name: 'PropertyHouseRules',
+        permissions: [
+            Permission.read(Role.any()),
+            Permission.create(Role.users()),
+            Permission.delete(Role.users())
+        ],
+        attributes: {
+            propertyId: { type: 'string', size: 36, required: true },
+            houseRuleId: { type: 'string', size: 36, required: true }
         }
     },
     subscriptions: {
         name: 'subscriptions',
         permissions: [
-            Permission.read(Role.user('{{document.userId}}')),
-            Permission.update(Role.user('{{document.userId}}')),
+            Permission.read(Role.users()),
+            Permission.update(Role.users()),
         ],
         attributes: {
             userId: { type: 'string', size: 255, required: true },
@@ -55,7 +116,7 @@ export const collections: Record<string, CollectionConfig> = {
     pageVisits: {
         name: 'pageVisits',
         permissions: [
-            Permission.read(Role.user('{{document.userId}}')),
+            Permission.read(Role.users()),
         ],
         attributes: {
             userId: { type: 'string', size: 255, required: true },
@@ -69,8 +130,8 @@ export const collections: Record<string, CollectionConfig> = {
     customDomains: {
         name: 'customDomains',
         permissions: [
-            Permission.read(Role.user('{{document.userId}}')),
-            Permission.update(Role.user('{{document.userId}}')),
+            Permission.read(Role.users()),
+            Permission.update(Role.users()),
         ],
         attributes: {
             userId: { type: 'string', size: 255, required: true },

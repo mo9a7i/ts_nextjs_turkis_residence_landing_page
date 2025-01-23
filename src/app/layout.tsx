@@ -5,6 +5,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Logo } from "@/components/ui/logo";
 import { Metadata, Viewport } from "next";
 import properties from "@/data/properties.json";
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 const cairo = Cairo({
   subsets: ['latin', 'arabic'],
@@ -76,6 +77,7 @@ export default function RootLayout({
               </div>
             </header>
             <main className="pt-14">
+              <LanguageSwitcher />
               {children}
             </main>
           </div>

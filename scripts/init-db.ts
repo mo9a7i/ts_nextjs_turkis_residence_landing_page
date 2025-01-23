@@ -1,9 +1,20 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { Databases, ID, Models } from 'node-appwrite';
-import { getAdminConfig } from './config/server';
-import { appwriteConfig } from './config/server';
+import { getAdminConfig, appwriteConfig } from './config/server';
 import { collections } from './config/collections';
 import { indexes } from './config/indexes';
 import { CollectionConfig, Attribute } from './config/types';
+
+// Add debug logging at the start
+console.log('Environment variables loaded:');
+console.log({
+    endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT,
+    projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID,
+    databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+    apiKey: process.env.APPWRITE_API_KEY?.substring(0, 10) + '...',
+});
 
 interface AppwriteError {
     code: number;
@@ -13,19 +24,23 @@ interface AppwriteError {
 
 async function createDatabase(databases: Databases): Promise<void> {
     try {
-        await databases.create(
-            ID.unique(),
-            'PropertyFlow Database'
-        );
-        console.log('Database created successfully');
-    } catch (error) {
-        const appwriteError = error as AppwriteError;
-        if (appwriteError.code === 409) {
-            console.log('Database already exists');
-        } else {
-            console.error('Error creating database:', error);
-            throw error;
+        // Check if database exists first
+        try {
+            await databases.get('main');
+            console.log('Database already exists, skipping creation');
+            return;
+        } catch (error) {
+            // Database doesn't exist, create it
+            await databases.create(
+                'main',
+                'PropertyFlow Database',
+                true
+            );
+            console.log('Database created successfully');
         }
+    } catch (error) {
+        console.error('Error in database creation:', error);
+        throw error;
     }
 }
 
@@ -79,38 +94,42 @@ async function createAttribute(
 
 async function createCollections(databases: Databases): Promise<void> {
     try {
-        for (const [key, config] of Object.entries(collections)) {
-            // Create collection
-            const collection = await databases.createCollection(
-                appwriteConfig.databaseId,
-                ID.unique(),
-                config.name,
-                config.permissions.map(permission => permission.toString())
-            ) as Models.Collection;
+        for (const [collectionId, config] of Object.entries(collections)) {
+            try {
+                // Check if collection exists
+                await databases.getCollection(
+                    appwriteConfig.databaseId,
+                    collectionId
+                );
+                console.log(`Collection ${collectionId} already exists, skipping`);
+                continue;
+            } catch {
+                // Collection doesn't exist, create it
+                await databases.createCollection(
+                    appwriteConfig.databaseId,
+                    collectionId,
+                    config.name,
+                    config.permissions.map(permission => permission.toString())
+                );
+                console.log(`Collection ${collectionId} created`);
 
-            // Create attributes
-            await Promise.all(
-                Object.entries(config.attributes).map(([name, attr]) =>
-                    createAttribute(
+                // Create attributes
+                for (const [name, attr] of Object.entries(config.attributes)) {
+                    await createAttribute(
                         databases,
                         appwriteConfig.databaseId,
-                        collection.$id,
+                        collectionId,
                         name,
                         attr
-                    )
-                )
-            );
+                    );
+                }
+                console.log(`Attributes created for ${collectionId}`);
+            }
         }
-
-        console.log('Collections created successfully');
+        console.log('Collections setup completed');
     } catch (error) {
-        const appwriteError = error as AppwriteError;
-        if (appwriteError.code === 409) {
-            console.log('Collections already exist');
-        } else {
-            console.error('Error creating collections:', error);
-            throw error;
-        }
+        console.error('Error creating collections:', error);
+        throw error;
     }
 }
 
@@ -156,6 +175,12 @@ async function initializeDatabase(databases: Databases): Promise<void> {
 
 // Only runs in development
 if (process.env.NODE_ENV === 'development') {
+    console.log('Initializing database...');
+    console.log(process.env.APPWRITE_API_KEY);
+    console.log(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID);
+    console.log(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT);
+    console.log(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID);
+    console.log(appwriteConfig);
     const { databases } = getAdminConfig();
     initializeDatabase(databases)
         .then(() => console.log('Database initialized'))
